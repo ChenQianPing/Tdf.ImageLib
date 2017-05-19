@@ -54,29 +54,37 @@ namespace Tdf.ImageLib
             var lstFrames = new List<Frame> {f3};
             #endregion
 
+            pPath = @"E:\10001003\liubei_gray.jpg";
+
             var bmp = new Bitmap(Image.FromFile(pPath));
 
+            /*
+            var result = ImageLib.ToGray(bmp);
+            result.Save(pSavedPath + "\\liubei_gray.jpg", ImageFormat.Jpeg);
+            */
 
+            var result = ImageLib.ConvertTo1Bpp2(bmp);
+            result.Save(pSavedPath + "\\liubei_gray_1bpp2.jpg", ImageFormat.Jpeg);
+
+            /*
             foreach (var frame in lstFrames)
             {
-                /*
                 var rectangleImg = ImageLib.DrawRectangleInPicture(bmp, frame.X, frame.Y, frame.Width, frame.Height);
                 rectangleImg.Save(pSavedPath + "\\rectangle.jpg", ImageFormat.Jpeg);
-                */
 
-                /*
                 var roundImg = ImageLib.DrawRoundInPicture(bmp, frame.X, frame.Y, frame.Width, frame.Height);
                 roundImg.Save(pSavedPath + "\\round.jpg", ImageFormat.Jpeg);
-                */
 
-                /*
                 var textImg = ImageLib.KiSetText(bmp, "设置文字", frame.X, frame.Y);
                 textImg.Save(pSavedPath + "\\text.jpg", ImageFormat.Jpeg);
-                */
 
                 var cutImg = ImageLib.KiCut(bmp, frame.X, frame.Y, frame.Width, frame.Height);
                 cutImg.Save(pSavedPath + "\\cut.jpg", ImageFormat.Jpeg);
             }
+            */
+
+
+
 
             Console.Write("End...");
 

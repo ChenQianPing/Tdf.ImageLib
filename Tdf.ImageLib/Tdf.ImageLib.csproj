@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cut.jpg" />
+    <Content Include="Resources\liubei.jpg" />
+    <Content Include="Resources\liubei_gray.jpg" />
+    <Content Include="Resources\liubei_gray_1bpp1.jpg" />
+    <Content Include="Resources\liubei_gray_1bpp2.jpg" />
+    <Content Include="Resources\liubei_gray_reverse.jpg" />
     <Content Include="Resources\rectangle.jpg" />
     <Content Include="Resources\round.jpg" />
     <Content Include="Resources\text.jpg" />
