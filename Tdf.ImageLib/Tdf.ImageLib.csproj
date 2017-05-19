@@ -53,6 +53,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\1d.jpg" />
     <Content Include="Resources\cut.jpg" />
     <Content Include="Resources\liubei.jpg" />
     <Content Include="Resources\liubei_gray.jpg" />
