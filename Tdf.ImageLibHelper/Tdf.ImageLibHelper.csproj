@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12675B4B-F2D3-4ED9-996A-045F0DD64879}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{77E74DD4-0BD5-46AC-BDE3-DC6112572EB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tdf.ImageLib</RootNamespace>
-    <AssemblyName>Tdf.ImageLib</AssemblyName>
+    <RootNamespace>Tdf.ImageLibHelper</RootNamespace>
+    <AssemblyName>Tdf.ImageLibHelper</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,31 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frame.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ImageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestImageLibHelper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\1d.jpg" />
-    <Content Include="Resources\cut.jpg" />
-    <Content Include="Resources\liubei.jpg" />
-    <Content Include="Resources\liubei_gray.jpg" />
-    <Content Include="Resources\liubei_gray_1bpp1.jpg" />
-    <Content Include="Resources\liubei_gray_1bpp2.jpg" />
-    <Content Include="Resources\liubei_gray_reverse.jpg" />
-    <Content Include="Resources\rectangle.jpg" />
-    <Content Include="Resources\round.jpg" />
-    <Content Include="Resources\text.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tdf.ImageLibHelper\Tdf.ImageLibHelper.csproj">
-      <Project>{77e74dd4-0bd5-46ac-bde3-dc6112572eb3}</Project>
-      <Name>Tdf.ImageLibHelper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
