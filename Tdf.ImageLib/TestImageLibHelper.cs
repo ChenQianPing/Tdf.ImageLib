@@ -97,13 +97,19 @@ namespace Tdf.ImageLib
             const string pPath = @"E:\10001003\1d.jpg";
             const string pSavedPath = @"E:\10001003\";
 
-            var bmp = new Bitmap(Image.FromFile(pPath));
+            // var bmp = new Bitmap(Image.FromFile(pPath));
+            // var bmp = (Bitmap)Image.FromFile(pPath);
+
+            var bmp = ImageHelper.OpenImageWithFileStream(pPath);
 
             // 图像旋转
-            var result = ImageHelper.RotateImg(bmp, 90);
-            var guid = Guid.NewGuid().ToString("N").ToUpper();
+            var processedImg = ImageHelper.RotateImg(bmp, 90);
+            bmp.Dispose();
 
-            result.Save(pSavedPath + "\\1d_rotate_" + guid + ".jpg", ImageFormat.Jpeg);
+            // var guid = Guid.NewGuid().ToString("N").ToUpper();
+            // result.Save(pSavedPath + "\\1d_rotate_" + guid + ".jpg", ImageFormat.Jpeg);
+            processedImg.Save(pPath, ImageFormat.Jpeg);
+            processedImg.Dispose();
 
             Console.Write("Processing completed");
 

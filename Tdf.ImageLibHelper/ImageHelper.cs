@@ -13,6 +13,54 @@ namespace Tdf.ImageLibHelper
 {
     public class ImageHelper
     {
+
+        #region 通过FileStream 来打开文件
+        /// <summary>
+        /// 通过FileStream 来打开文件，这样就可以实现不锁定Image文件，到时可以让多用户同时访问Image文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static Bitmap ReadImageFile(string path)
+        {
+            // OpenRead
+            var fs = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            // var fs = File.OpenRead(path);
+            var filelength = 0;
+
+            // 获得文件长度 
+            filelength = (int)fs.Length;
+            // 建立一个字节数组 
+            var image = new byte[filelength];
+            // 按字节流读取 
+            fs.Read(image, 0, filelength);
+            var result = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+            fs.Dispose();
+
+            var bit = new Bitmap(result);
+            return bit;
+        }
+        #endregion
+
+        public static Image OpenImageWithFileStream(string filename)
+        {
+            var fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+            var buffer = new byte[fs.Length];
+            var length = 0;
+            var ibyteRead = 0;
+
+            do
+            {
+                length = fs.Read(buffer, ibyteRead, buffer.Length - ibyteRead);
+                ibyteRead += length;
+            } while (length > 0);
+
+            var bitmap = Image.FromStream(fs);
+            fs.Close();
+            fs.Dispose();
+            return bitmap;
+        }
+
         #region 在图片上画框
         /// <summary>
         /// Lib #1.在图片上画框
