@@ -94,8 +94,8 @@ namespace Tdf.ImageLib
 
         public void TestMethod2()
         {
-            const string pPath = @"E:\10001003\1d.jpg";
-            const string pSavedPath = @"E:\10001003\";
+            const string pPath = @"E:\src\Tdf.ImageLib\Tdf.ImageLib\Resources\1d.jpg";
+            // const string pSavedPath = @"E:\src\Tdf.ImageLib\Tdf.ImageLib\Resources\";
 
             // var bmp = new Bitmap(Image.FromFile(pPath));
             // var bmp = (Bitmap)Image.FromFile(pPath);
